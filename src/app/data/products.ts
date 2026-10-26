@@ -1,10 +1,18 @@
+import tomImage from "../../../image/Tom.jfif";
+import cuaImage from "../../../image/Cua.jpg";
+import ngaoSoOcImage from "../../../image/ngao-so-oc.webp";
+import caNuocNgotImage from "../../../image/ca-nuoc-ngot.jpg";
+import caNuocManImage from "../../../image/ca-nuoc-man.jpg";
+import thitLonImage from "../../../image/thit-lon.jfif";
+import thitBoImage from "../../../image/thit-bo.jpg";
+
 export interface Product {
   id: string;
   name: string;
   category: string;
   image: string;
   description: string;
-  price: number; // Giá tính theo VNĐ/kg (hoặc đơn vị phù hợp)
+  price?: number; // Giá tính theo VNĐ/kg (hoặc đơn vị phù hợp)
   unit?: string; // Đơn vị tính (kg, bó, bắp, etc.)
   growingMethod: string;
   selectionCriteria: string;
@@ -775,5 +783,96 @@ export const products: Product[] = [
     ],
     season: "Quanh năm",
     storage: "Bảo quản trong ngăn mát tủ lạnh 1-2 tuần"
+  },
+  {
+    id: "tom-tuoi",
+    name: "Tôm Tươi",
+    category: "Tôm",
+    unit: "kg",
+    image: tomImage,
+    description: "Tôm tươi, thịt chắc ngọt, phù hợp cho nhiều món ăn gia đình",
+    growingMethod: "Sản phẩm được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn tôm còn nguyên vẹn, thân chắc, có mùi tự nhiên; kiểm tra độ tươi khi nhận hàng.",
+    benefits: ["Thực phẩm giàu đạm", "Thịt ngọt, dễ chế biến", "Phù hợp với món hấp, rang và nấu canh"],
+    season: "Tùy nguồn hàng",
+    storage: "Bảo quản lạnh; nếu chưa dùng ngay, cấp đông và sử dụng sớm sau khi rã đông."
+  },
+  {
+    id: "cua-tuoi",
+    name: "Cua Tươi",
+    category: "Cua",
+    unit: "kg",
+    image: cuaImage,
+    description: "Cua tươi chắc thịt, thích hợp hấp, nấu canh hoặc chế biến món ăn gia đình",
+    growingMethod: "Sản phẩm được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn cua còn nguyên vẹn, chắc tay, có mùi tự nhiên; kiểm tra tình trạng cua khi nhận hàng.",
+    benefits: ["Thực phẩm giàu đạm", "Có thể chế biến thành nhiều món", "Thích hợp cho bữa cơm gia đình"],
+    season: "Tùy nguồn hàng",
+    storage: "Giữ lạnh và chế biến sớm; không để hải sản tươi ở nhiệt độ phòng lâu."
+  },
+  {
+    id: "ngao-so-oc",
+    name: "Ngao, Sò, Ốc",
+    category: "Ngao Sò Ốc",
+    unit: "kg",
+    image: ngaoSoOcImage,
+    description: "Các loại ngao, sò và ốc tươi ngon, dùng hấp, nấu canh hoặc xào",
+    growingMethod: "Sản phẩm được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn con nguyên vẹn, có mùi tự nhiên; loại bỏ những con có dấu hiệu bất thường trước khi chế biến.",
+    benefits: ["Đa dạng lựa chọn cho bữa ăn", "Dễ kết hợp với nhiều cách chế biến", "Phù hợp các món hấp, nấu và xào"],
+    season: "Tùy nguồn hàng",
+    storage: "Giữ lạnh và chế biến sớm; rửa sạch và kiểm tra kỹ trước khi chế biến."
+  },
+  {
+    id: "ca-nuoc-ngot",
+    name: "Cá Nước Ngọt",
+    category: "Cá Nước Ngọt",
+    unit: "kg",
+    image: caNuocNgotImage,
+    description: "Cá nước ngọt tươi, thịt thơm, phù hợp kho, chiên hoặc nấu canh",
+    growingMethod: "Sản phẩm được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn cá có mắt trong, mang đỏ tươi, thân chắc và mùi tự nhiên; kiểm tra độ tươi khi nhận hàng.",
+    benefits: ["Thực phẩm giàu đạm", "Có thể chế biến thành nhiều món", "Phù hợp cho bữa ăn hàng ngày"],
+    season: "Tùy nguồn hàng",
+    storage: "Bảo quản lạnh và chế biến sớm; cấp đông nếu cần bảo quản lâu hơn."
+  },
+  {
+    id: "ca-bien",
+    name: "Cá Biển",
+    category: "Cá Biển",
+    unit: "kg",
+    image: caNuocManImage,
+    description: "Cá biển tươi, thịt thơm ngon, thích hợp hấp, chiên, nướng hoặc nấu canh",
+    growingMethod: "Sản phẩm được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn cá có mắt trong, mang đỏ tươi, thân chắc và mùi tự nhiên; kiểm tra độ tươi khi nhận hàng.",
+    benefits: ["Thực phẩm giàu đạm", "Có thể chế biến thành nhiều món", "Thích hợp cho bữa cơm gia đình"],
+    season: "Tùy nguồn hàng",
+    storage: "Bảo quản lạnh và chế biến sớm; cấp đông nếu cần bảo quản lâu hơn."
+  },
+  {
+    id: "thit-lon",
+    name: "Thịt Lợn Tươi",
+    category: "Thịt Lợn",
+    unit: "kg",
+    image: thitLonImage,
+    description: "Thịt lợn tươi, phù hợp chế biến các món kho, luộc, rang và xào",
+    growingMethod: "Sản phẩm được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn thịt có màu sắc tự nhiên, bề mặt khô ráo, độ đàn hồi tốt và không có mùi lạ.",
+    benefits: ["Thực phẩm giàu đạm", "Đa dạng phần thịt và cách chế biến", "Thích hợp cho bữa ăn gia đình"],
+    season: "Có hàng theo nguồn cung",
+    storage: "Bảo quản lạnh và chế biến sớm; cấp đông nếu cần bảo quản lâu hơn."
+  },
+  {
+    id: "thit-bo",
+    name: "Thịt Bò Tươi",
+    category: "Thịt Bò",
+    unit: "kg",
+    image: thitBoImage,
+    description: "Thịt bò tươi, phù hợp chế biến món xào, nướng, hầm hoặc nấu canh",
+    growingMethod: "Sản phẩm được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn thịt có màu sắc tự nhiên, thớ thịt săn, bề mặt khô ráo và không có mùi lạ.",
+    benefits: ["Thực phẩm giàu đạm", "Đa dạng phần thịt và cách chế biến", "Thích hợp cho bữa cơm gia đình"],
+    season: "Có hàng theo nguồn cung",
+    storage: "Bảo quản lạnh và chế biến sớm; cấp đông nếu cần bảo quản lâu hơn."
   },
 ];

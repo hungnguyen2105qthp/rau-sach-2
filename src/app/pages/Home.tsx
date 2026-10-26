@@ -114,7 +114,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-4"
             >
-              Rau Sạch VietGAP
+              Thực Phẩm Tươi Sạch
             </motion.h1>
             <motion.h2 
               initial={{ opacity: 0, y: -20 }}
@@ -130,8 +130,8 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-gray-700 text-base sm:text-lg mb-8"
             >
-              Sản xuất rau an toàn theo tiêu chuẩn VietGAP - Cam kết chất lượng, 
-              an toàn cho sức khỏe gia đình Việt
+              Rau an toàn theo tiêu chuẩn VietGAP cùng hải sản và thịt tươi được
+              lựa chọn kỹ lưỡng cho bữa ăn gia đình Việt
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}

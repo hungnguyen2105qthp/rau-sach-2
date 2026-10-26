@@ -90,6 +90,15 @@ const figmaImageMap: Record<string, string> = {
 export default function Products() {
   // Group products by category
   const categories = Array.from(new Set(products.map(p => p.category)));
+  const additionalCategories = [
+    "Tôm",
+    "Cua",
+    "Ngao Sò Ốc",
+    "Cá Nước Ngọt",
+    "Cá Biển",
+    "Thịt Lợn",
+    "Thịt Bò",
+  ];
 
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -116,7 +125,7 @@ export default function Products() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 text-center mb-4"
           >
-            Sản Phẩm Rau Củ Sạch
+            Sản Phẩm Tươi Sạch
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -124,14 +133,34 @@ export default function Products() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-lg sm:text-xl text-green-700 text-center max-w-3xl mx-auto"
           >
-            Rau củ tươi ngon, an toàn, được sản xuất theo tiêu chuẩn VietGAP
+            Rau củ, hải sản và thịt tươi ngon, được lựa chọn theo nguồn hàng trong ngày
           </motion.p>
         </div>
       </section>
 
+      <nav aria-label="Danh mục hải sản và thịt" className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <p className="text-sm font-semibold text-gray-700 mb-3">Khám phá danh mục</p>
+          <div className="flex flex-wrap gap-2">
+            {additionalCategories.map((category) => {
+              const categoryIndex = categories.indexOf(category);
+              return (
+                <a
+                  key={category}
+                  href={`#category-${categoryIndex}`}
+                  className="rounded-full border border-green-200 px-4 py-2 text-sm font-medium text-green-800 transition-colors hover:bg-green-50"
+                >
+                  {category}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </nav>
+
       {/* Products by Category */}
       {categories.map((category, categoryIndex) => (
-        <section key={category} className="py-12 md:py-16 bg-white">
+        <section id={`category-${categoryIndex}`} key={category} className="py-12 md:py-16 bg-white scroll-mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.h2 
               initial={{ opacity: 0, x: -20 }}

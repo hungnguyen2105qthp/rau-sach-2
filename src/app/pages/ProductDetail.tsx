@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router";
-import { ArrowLeft, Check, Clock, Calendar, Sprout, ClipboardCheck, DollarSign } from "lucide-react";
+import { ArrowLeft, Check, Clock, Calendar, ClipboardCheck, DollarSign } from "lucide-react";
 import { motion } from "motion/react";
 import { products } from "../data/products";
 
@@ -291,10 +291,10 @@ export default function ProductDetail() {
                 transition={{ duration: 0.5 }}
                 className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
               >
-                <Sprout className="w-6 h-6 text-green-600" />
+                <Check className="w-6 h-6 text-green-600" />
               </motion.div>
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-                Phương Pháp Canh Tác
+                Thông Tin Sản Phẩm
               </h2>
             </div>
             <p className="text-gray-700 leading-relaxed">
