@@ -5,6 +5,8 @@ import caNuocNgotImage from "../../../image/ca-nuoc-ngot.jpg";
 import caNuocManImage from "../../../image/ca-nuoc-man.jpg";
 import thitLonImage from "../../../image/thit-lon.jfif";
 import thitBoImage from "../../../image/thit-bo.jpg";
+import cuCanhImage from "../../../image/cu-canh.jfif";
+import rauRamThiLaToiImage from "../../../image/rauram-thila-toi.jpg";
 
 export interface Product {
   id: string;
@@ -157,19 +159,19 @@ export const products: Product[] = [
   },
   {
     id: "cu-canh",
-    name: "Củ Cảnh (Củ Dền)",
+    name: "Củ Canh",
     category: "Củ",
     price: 35000,
     unit: "kg",
-    image: "https://images.unsplash.com/photo-1741518009653-8c17d00345b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0dXJuaXAlMjByb290JTIwdmVnZXRhYmxlfGVufDF8fHx8MTc3NTY2MTU1Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    description: "Củ cảnh tròn, ngọt bùi, giàu dinh dưỡng",
-    growingMethod: "Củ cảnh được trồng trong đất tơi xốp, giàu dinh dưỡng. Cần tưới nước đều đặn và bón phân hữu cơ. Thu hoạch sau 2-3 tháng khi củ đạt kích thước phù hợp.",
-    selectionCriteria: "Chọn củ cảnh có màu tím đỏ hoặc vàng tươi, vỏ mỏng, không có vết nứt. Củ cứng, nặng tay. Tránh chọn củ có vỏ nhăn, m���m hay có rễ nhiều.",
+    image: cuCanhImage,
+    description: "Củ canh tươi, vị bùi, phù hợp để chế biến các món canh.",
+    growingMethod: "Củ canh được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn củ chắc tay, bề mặt nguyên vẹn, không mềm nhũn hay có dấu hiệu hư hỏng.",
     benefits: [
-      "Giàu chất xơ và vitamin",
-      "Hỗ trợ tiêu hóa",
-      "Chống oxy hóa tự nhiên",
-      "Tốt cho hệ tim mạch"
+      "Vị bùi, dễ kết hợp trong món ăn",
+      "Thích hợp chế biến các món canh",
+      "Có thể kết hợp với nhiều nguyên liệu",
+      "Dễ sơ chế trước khi nấu"
     ],
     season: "Quanh năm",
     storage: "Bảo quản trong ngăn mát tủ lạnh 2-3 tuần"
@@ -268,6 +270,24 @@ export const products: Product[] = [
     ],
     season: "Quanh năm",
     storage: "Bảo quản trong ngăn mát tủ lạnh 5-7 ngày"
+  },
+  {
+    id: "rau-ram-thi-la-toi",
+    name: "Rau Răm - Thì Là - Tỏi",
+    category: "Rau Gia Vị",
+    unit: "bó",
+    image: rauRamThiLaToiImage,
+    description: "Rau răm, thì là và tỏi tươi thơm, giúp món ăn thêm dậy vị.",
+    growingMethod: "Rau gia vị được tuyển chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+    selectionCriteria: "Chọn rau có lá xanh tươi, thân không dập úng và tỏi chắc củ, không có dấu hiệu mốc.",
+    benefits: [
+      "Tạo hương thơm đặc trưng cho món ăn",
+      "Dùng làm gia vị hoặc ăn kèm",
+      "Kết hợp linh hoạt trong nhiều món",
+      "Có thể dùng tươi khi chế biến"
+    ],
+    season: "Quanh năm",
+    storage: "Bảo quản rau trong ngăn mát; để tỏi ở nơi khô ráo, thoáng mát"
   },
   {
     id: "khoai-lang-tim",

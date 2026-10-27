@@ -25,7 +25,6 @@ import imgImageMp from "figma:asset/091a121f57d66ee5c482d42baf62cc3c2fc18685.png
 import imgImageSuSu from "figma:asset/88a24ed0469877243a3fc33361c872beea29e09c.png";
 import imgImageCaRt from "figma:asset/748326b6dbf33211145390baa709e15a08802869.png";
 import imgImageCCiTrng from "figma:asset/370f5e802649904567f5e974d009d50dad548568.png";
-import imgImageCCnhCDn from "figma:asset/1f5372d338c83cfc65f4547da8a46c1e61de8d57.png";
 import imgImageGngTi from "figma:asset/ac34420ddfeb4fa3ef68054ed5ad7e70b73dfed6.png";
 import imgImageHanhKho from "figma:asset/3435b9a404a5c403340de6ad794f8700b3ab4d7b.png";
 import imgImageKhoaiLangTim from "figma:asset/7a256fcf420bf7378e1b7ff70aec0678e143053e.png";
@@ -67,7 +66,6 @@ const figmaImageMap: Record<string, string> = {
   "su-su": imgImageSuSu,
   "ca-rot": imgImageCaRt,
   "cu-cai-trang": imgImageCCiTrng,
-  "cu-canh": imgImageCCnhCDn,
   "gung-tuoi": imgImageGngTi,
   "hanh-kho": imgImageHanhKho,
   "khoai-lang-tim": imgImageKhoaiLangTim,
