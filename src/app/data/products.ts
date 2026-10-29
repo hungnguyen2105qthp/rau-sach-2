@@ -7,6 +7,23 @@ import thitLonImage from "../../../image/thit-lon.jfif";
 import thitBoImage from "../../../image/thit-bo.jpg";
 import cuCanhImage from "../../../image/cu-canh.jfif";
 import rauRamThiLaToiImage from "../../../image/rauram-thila-toi.jpg";
+import banhBaoImage from "../../../image/banh-bao.jfif";
+import banhPhoImage from "../../../image/banh-pho.jpg";
+import beBeImage from "../../../image/be-be.jpg";
+import chuoiImage from "../../../image/chuoi.jfif";
+import dauPhuImage from "../../../image/dau-phu.jpg";
+import duaHauImage from "../../../image/dua-hau.jfif";
+import hatSenImage from "../../../image/hat-sen.jfif";
+import luonImage from "../../../image/luon.webp";
+import miImage from "../../../image/mi.jpg";
+import mucImage from "../../../image/muc.jpeg";
+import namKimChamImage from "../../../image/nam-kim-cham.jfif";
+import thanhLongImage from "../../../image/thanh-long.jfif";
+import thitBoCauImage from "../../../image/thit-bo-cau.jfif";
+import thitGaImage from "../../../image/thit-ga.jfif";
+import thitNganImage from "../../../image/thit-ngan.jfif";
+import thitVitImage from "../../../image/thit-vit.jfif";
+import trungGaTrungCutImage from "../../../image/trungga-trung-cut.jfif";
 
 export interface Product {
   id: string;
@@ -21,7 +38,54 @@ export interface Product {
   benefits: string[];
   season: string;
   storage: string;
+  benefitTitle?: string;
 }
+
+const createAdditionalProduct = (
+  id: string,
+  name: string,
+  category: string,
+  image: string,
+  description: string,
+  unit = "kg",
+): Product => ({
+  id,
+  name,
+  category,
+  image,
+  description,
+  unit,
+  benefitTitle: "Gợi Ý Sử Dụng",
+  growingMethod: "Sản phẩm được lựa chọn theo nguồn hàng và tình trạng thực tế trong ngày.",
+  selectionCriteria: "Kiểm tra tình trạng, màu sắc và mùi tự nhiên trước khi nhận hàng.",
+  benefits: [
+    "Dễ kết hợp với bữa ăn hằng ngày",
+    "Có thể chế biến theo nhiều cách phù hợp",
+    "Sơ chế và sử dụng tùy theo nhu cầu",
+  ],
+  season: "Có hàng theo nguồn cung",
+  storage: "Bảo quản phù hợp với từng loại thực phẩm và ưu tiên sử dụng sớm sau khi mua.",
+});
+
+const additionalProducts: Product[] = [
+  createAdditionalProduct("be-be", "Bề Bề", "Hải Sản", beBeImage, "Bề bề tươi, thịt ngọt, thích hợp hấp, rang hoặc nấu bún."),
+  createAdditionalProduct("luon", "Lươn Tươi", "Hải Sản", luonImage, "Lươn tươi, phù hợp chế biến các món om, xào hoặc nấu cháo."),
+  createAdditionalProduct("muc", "Mực Tươi", "Hải Sản", mucImage, "Mực tươi, có thể chế biến món hấp, xào, nướng hoặc nhúng lẩu."),
+  createAdditionalProduct("thit-ga", "Thịt Gà Tươi", "Thịt Gia Cầm", thitGaImage, "Thịt gà tươi, phù hợp cho các món luộc, rang, kho và nấu canh."),
+  createAdditionalProduct("thit-ngan", "Thịt Ngan Tươi", "Thịt Gia Cầm", thitNganImage, "Thịt ngan tươi, thích hợp luộc, om hoặc chế biến cùng măng."),
+  createAdditionalProduct("thit-vit", "Thịt Vịt Tươi", "Thịt Gia Cầm", thitVitImage, "Thịt vịt tươi, có thể chế biến món luộc, om, nướng hoặc nấu cháo."),
+  createAdditionalProduct("thit-bo-cau", "Thịt Bồ Câu", "Thịt Gia Cầm", thitBoCauImage, "Thịt bồ câu, phù hợp chế biến món hầm, quay hoặc nấu cháo."),
+  createAdditionalProduct("trung-ga-trung-cut", "Trứng Gà, Trứng Cút", "Trứng", trungGaTrungCutImage, "Trứng gà và trứng cút, tiện dùng trong nhiều món ăn gia đình.", "khay"),
+  createAdditionalProduct("banh-bao", "Bánh Bao", "Thực Phẩm Chế Biến", banhBaoImage, "Bánh bao tiện dùng cho bữa sáng hoặc bữa ăn nhẹ.", "cái"),
+  createAdditionalProduct("banh-pho", "Bánh Phở", "Thực Phẩm Chế Biến", banhPhoImage, "Bánh phở dùng để chế biến các món phở nước hoặc phở xào.", "kg"),
+  createAdditionalProduct("dau-phu", "Đậu Phụ", "Thực Phẩm Chế Biến", dauPhuImage, "Đậu phụ mềm, có thể dùng trong món canh, sốt, rán hoặc hấp.", "bìa"),
+  createAdditionalProduct("mi", "Mì", "Thực Phẩm Chế Biến", miImage, "Mì tiện lợi để chế biến món nước, món xào hoặc ăn kèm lẩu.", "gói"),
+  createAdditionalProduct("nam-kim-cham", "Nấm Kim Châm", "Nấm", namKimChamImage, "Nấm kim châm phù hợp cho món lẩu, canh, xào hoặc cuốn.", "gói"),
+  createAdditionalProduct("hat-sen", "Hạt Sen", "Hạt & Đậu", hatSenImage, "Hạt sen có thể dùng nấu chè, nấu cháo hoặc chế biến món hầm.", "kg"),
+  createAdditionalProduct("chuoi", "Chuối", "Hoa Quả", chuoiImage, "Chuối tươi, thích hợp dùng trực tiếp hoặc chế biến món ăn, đồ uống.", "nải"),
+  createAdditionalProduct("dua-hau", "Dưa Hấu", "Hoa Quả", duaHauImage, "Dưa hấu tươi, có thể dùng tráng miệng hoặc làm nước ép.", "kg"),
+  createAdditionalProduct("thanh-long", "Thanh Long", "Hoa Quả", thanhLongImage, "Thanh long tươi, phù hợp dùng trực tiếp hoặc làm món tráng miệng.", "kg"),
+];
 
 export const products: Product[] = [
   {
@@ -895,4 +959,5 @@ export const products: Product[] = [
     season: "Có hàng theo nguồn cung",
     storage: "Bảo quản lạnh và chế biến sớm; cấp đông nếu cần bảo quản lâu hơn."
   },
+  ...additionalProducts,
 ];

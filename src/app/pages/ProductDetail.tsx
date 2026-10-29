@@ -206,6 +206,16 @@ export default function ProductDetail() {
                 {product.description}
               </motion.p>
 
+              {product.price !== undefined && (
+                <div className="mb-6 flex items-center gap-2 rounded-xl bg-green-50 p-4 text-green-800">
+                  <DollarSign className="h-5 w-5 shrink-0" />
+                  <p className="font-bold">
+                    {new Intl.NumberFormat("vi-VN").format(product.price)} đ
+                    {product.unit && <span className="font-normal text-green-700"> / {product.unit}</span>}
+                  </p>
+                </div>
+              )}
+
               {/* Additional Info */}
               <motion.div 
                 variants={staggerContainer}
@@ -245,7 +255,7 @@ export default function ProductDetail() {
                 className="border-t pt-6"
               >
                 <h2 className="text-xl font-bold text-gray-900 mb-4">
-                  Lợi Ích Dinh Dưỡng
+                  {product.benefitTitle || "Lợi Ích Dinh Dưỡng"}
                 </h2>
                 <motion.ul 
                   variants={staggerContainer}

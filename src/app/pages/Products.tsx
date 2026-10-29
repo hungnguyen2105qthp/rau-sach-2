@@ -88,16 +88,6 @@ const figmaImageMap: Record<string, string> = {
 export default function Products() {
   // Group products by category
   const categories = Array.from(new Set(products.map(p => p.category)));
-  const additionalCategories = [
-    "Tôm",
-    "Cua",
-    "Ngao Sò Ốc",
-    "Cá Nước Ngọt",
-    "Cá Biển",
-    "Thịt Lợn",
-    "Thịt Bò",
-  ];
-
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -136,22 +126,22 @@ export default function Products() {
         </div>
       </section>
 
-      <nav aria-label="Danh mục hải sản và thịt" className="bg-white border-b">
+      <nav aria-label="Danh mục sản phẩm" className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <p className="text-sm font-semibold text-gray-700 mb-3">Khám phá danh mục</p>
+          <p className="text-sm font-semibold text-gray-700 mb-3">Khám phá {categories.length} danh mục</p>
           <div className="flex flex-wrap gap-2">
-            {additionalCategories.map((category) => {
-              const categoryIndex = categories.indexOf(category);
-              return (
-                <a
-                  key={category}
-                  href={`#category-${categoryIndex}`}
-                  className="rounded-full border border-green-200 px-4 py-2 text-sm font-medium text-green-800 transition-colors hover:bg-green-50"
-                >
-                  {category}
-                </a>
-              );
-            })}
+            {categories.map((category, categoryIndex) => (
+              <a
+                key={category}
+                href={`#category-${categoryIndex}`}
+                className="rounded-full border border-green-200 px-4 py-2 text-sm font-medium text-green-800 transition-colors hover:border-green-500 hover:bg-green-50"
+              >
+                {category}
+                <span className="ml-2 text-green-600">
+                  {products.filter((product) => product.category === category).length}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </nav>
@@ -187,32 +177,39 @@ export default function Products() {
                   >
                     <Link
                       to={`/products/${product.id}`}
-                      className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow block"
+                      className="group block overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
                     >
-                      <div className="aspect-[4/3] overflow-hidden">
+                      <div className="relative aspect-[4/3] overflow-hidden bg-green-50">
                         <motion.img
                           whileHover={{ scale: 1.1 }}
                           transition={{ duration: 0.3 }}
                           src={figmaImageMap[product.id] || product.image}
                           alt={product.name}
-                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          className="h-full w-full object-cover"
                         />
+                        <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-green-800 shadow-sm">
+                          {product.category}
+                        </span>
                       </div>
                       <div className="p-5">
                         <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-xl font-bold text-gray-900">
+                          <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-green-700">
                             {product.name}
                           </h3>
                           <Plus className="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform" />
                         </div>
-                        <p className="text-sm text-green-600 font-semibold mb-2">
-                          {product.category}
-                        </p>
                         <p className="text-gray-600 text-sm line-clamp-2 mb-3">
                           {product.description}
                         </p>
                         <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                          <span className="text-sm text-green-600 font-semibold group-hover:underline">
+                          {product.price !== undefined && (
+                            <span className="font-bold text-green-700">
+                              {new Intl.NumberFormat("vi-VN").format(product.price)} đ
+                              {product.unit && <span className="font-normal text-gray-500"> / {product.unit}</span>}
+                            </span>
+                          )}
+                          <span className="ml-auto text-sm font-semibold text-green-600 group-hover:underline">
                             Xem chi tiết →
                           </span>
                         </div>
